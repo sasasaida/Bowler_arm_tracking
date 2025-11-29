@@ -18,7 +18,7 @@ h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = cap.get(cv2.CAP_PROP_FPS)
 
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-output_path = os.path.join("../../outputs", "right_arm_tracking.mp4")
+output_path = os.path.join("../../outputs", "right_arm_tracking_stable.mp4")
 out = cv2.VideoWriter(output_path, fourcc, fps, (w, h))
 
 while cap.isOpened():
