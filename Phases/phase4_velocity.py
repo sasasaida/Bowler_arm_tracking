@@ -10,7 +10,8 @@ if not os.path.exists("../../outputs"):
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose()
 
-video_path = "./clips/clip1.mp4"
+#video_path = "./clips/clip1.mp4"
+video_path = r"C:\Users\l\OneDrive\Desktop\codes and projects\Projects\My Own\Cricket Bowler Arm Tracking System\clips\clip1.mp4"
 cap = cv2.VideoCapture(video_path)
 
 # Get video properties
@@ -24,7 +25,7 @@ if fps == 0 or fps is None:
 time_per_frame = 1 / fps   # NEW ✔
 
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-output_path = os.path.join("./outputs", "phase4_velocity.mp4")
+output_path = os.path.join(r"C:\Users\l\OneDrive\Desktop\codes and projects\Projects\My Own\Cricket Bowler Arm Tracking System\outputs", "phase4_velocity.mp4")
 out = cv2.VideoWriter(output_path, fourcc, fps, (w, h))
 
 # --- NEW: Store previous wrist position ---
