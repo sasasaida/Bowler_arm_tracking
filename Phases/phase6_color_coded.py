@@ -20,8 +20,14 @@ if not cap.isOpened():
 w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = cap.get(cv2.CAP_PROP_FPS)
+print(f"FPS = {fps}")
 if fps == 0 or fps is None:
     fps = 30
+    from moviepy import VideoFileClip
+    clip = VideoFileClip(video_path)
+    fps = clip.fps
+    print(f"FPS = {fps}")
+
 time_per_frame = 1 / fps
 
 # ---------------- Video Writer ----------------
@@ -138,7 +144,7 @@ while True:
             # Color-coded graph
             if speed < 20:
                 color = (0,255,0)
-            elif speed < 35:
+            elif speed < 50:
                 color = (0,255,255)
             else:
                 color = (0,0,255)
